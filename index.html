@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tá no Fogo</title>
+  <!-- Fonte do nome Tá no Fogo na Aba do navegador -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style-home.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo-wrap">
+        <img src="img/logo2.png" alt="Logo Tá no Fogo" class="logo-img">
+        <div class="brand">Tá no Fogo</div>
+      </div>
+      <nav>
+      <ul>
+        <li><a href="bahia.html">Bahia</a></li>
+        <li><a href="df.html">Distrito Federal</a></li>
+        <li><a href="GO.html">Goiás</a></li>
+        <li><a href="MA.html">Maranhão</a></li>
+        <li><a href="pernambuco.html">Pernambuco</a></li>
+        <li><a href="piaui.html">Piauí</a></li>
+        <li><a href="rj.html">Rio de Janeiro</a></li>
+        <li><a href="sp.html">São Paulo</a></li>
+        <li><a href="RS.html">Rio Grande do Sul</a></li>
+      </ul>
+    </nav>
+    </header>
+
+    <main>
+      </section>
+    <section class="apresentacao">
+    <div class="texto-principal">
+      <h1>Bem-vindo ao Tá no Fogo!</h1>
+      <p class="destaque">
+        O seu guia completo da culinária brasileira estado por estado.
+      </p>
+      <p>
+        Aqui você encontra as receitas mais tradicionais e saborosas de cada canto do Brasil: 
+        da feijoada carioca ao churrasco gaúcho, do acarajé baiano ao arroz de cuxá maranhense, 
+        da galinhada goiana ao bolo de rolo pernambucano.
+      </p>
+      <p>
+        Cada estado tem sua história, seus ingredientes e seus segredos na cozinha. 
+        No <strong>Tá no Fogo</strong> a gente te leva pra dentro dessas panelas, 
+        com receitas testadas, passo a passo detalhado e aquele carinho que só quem ama comida brasileira entende.
+      </p>
+      <p class="chamada">
+        Escolha seu estado no menu acima e bora colocar a mão na massa (ou no fogo)! 🔥
+      </p>
+    </div>
+  </section>
+
+      <section class="carousel">
+        <button class="prev">&#10094;</button>
+        <div class="carousel-track">
+          <a href="sp.html"><img src="img/virado-a-paulista.jpg" alt="Imagem 1"></a>
+          <a href="MA.html"><img src="img/Arroz_de_cuxá.jpg"alt="Imagem 2"></a>
+          <a href="MA.html"><img src="img/imagem de pave.jpg"alt="Imagem 3"></a>
+          <a href="RS.html"><img src="img/churrasco.jpeg"></a>
+          <a href="GO.html"><img src="img/galinha-caipira.jpg" alt="Imagem 5"></a>
+          <a href="df.html"><img src="img/Galinhada.jpg" alt="Imagem 6"></a>
+          <a href="rj.html"><img src="img/Feijoada-carioca.jpg" alt="Imagem 7"></a>
+          <a href="rj.html"><img src="img/Bolinho-de-bacalhau.jpg" alt="Imagem 8"></a>
+          <a href="RS.html"><img src="img/arroz.jpeg" alt="Imagem 9"></a>
+        </div>
+      <button class="next">&#10095;</button>
+    
+</main>
+    </main>
+
+    <footer>
+      © Tá no Fogo — Receitas típicas
+    </footer>
+  </div>
+  <script>
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
+
+    let currentSlide = 0;
+
+    function updateCarousel() {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+  </script>
+</body>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const track = document.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
+
+    let currentSlide = 0;
+
+    function updateCarousel() {
+      const slideWidth = slides[0].getBoundingClientRect().width;
+      track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+    }
+
+    nextButton.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      updateCarousel();
+    });
+
+    prevButton.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      updateCarousel();
+    });
+
+    window.addEventListener('resize', updateCarousel);
+  });
+</script>
+</body>
+</html>
